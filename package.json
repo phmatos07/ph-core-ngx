@@ -1,16 +1,17 @@
 {
   "name": "ph-core-ngx",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "dev": "ng serve",
+    "dev:aot": "ng serve --optimization --aot",
     "build": "ng build",
-    "build:core": "cd projects/ph-core && npm install && ng build ph-core",
+    "build:core": "cd projects/ph-core && npm install && ng build @ph/core",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build @ph/core"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.5",
     "@angular/common": "~10.1.5",

@@ -45,6 +45,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -124,7 +125,7 @@
         }
       }
     },
-    "ph-core": {
+    "@ph/core": {
       "projectType": "library",
       "root": "projects/ph-core",
       "sourceRoot": "projects/ph-core/src",
@@ -163,6 +164,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ph-core-ngx"
 }
