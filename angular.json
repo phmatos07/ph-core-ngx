@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ph-core": {
+      "projectType": "library",
+      "root": "projects/ph-core",
+      "sourceRoot": "projects/ph-core/src",
+      "prefix": "phc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ph-core/tsconfig.lib.json",
+            "project": "projects/ph-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ph-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ph-core/src/test.ts",
+            "tsConfig": "projects/ph-core/tsconfig.spec.json",
+            "karmaConfig": "projects/ph-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ph-core/tsconfig.lib.json",
+              "projects/ph-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ph-core-ngx"
 }
