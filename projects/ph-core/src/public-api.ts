@@ -3,5 +3,6 @@
  */
 
 export * from './lib/commons-consts/index';
+export * from './lib/directives/index';
 export * from './lib/pipes/index';
 export * from './lib/services/index';
