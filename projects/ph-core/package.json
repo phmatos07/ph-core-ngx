@@ -1,0 +1,10 @@
+{
+  "name": "ph-core",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10.1.6",
+    "@angular/core": "^10.1.6",
+    "class-validator": "^0.12.2",
+    "tslib": "^2.0.0"
+  }
+}
