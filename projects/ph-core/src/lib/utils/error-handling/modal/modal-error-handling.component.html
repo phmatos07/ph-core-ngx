@@ -1,0 +1,36 @@
+<div
+  *ngIf="isOpen"
+  class="modal-error-handling"
+  [ngClass]="modalIconClass"
+  (keyup)="closeModal($event)"
+>
+  <section>
+    <header>
+      <span class="modal-error-handling-icon"></span>
+      <h1 [ngClass]="modalTitleClass">
+        {{ title }}
+      </h1>
+    </header>
+
+    <ul *ngIf="isDetails; else viewMessage">
+      <li *ngFor="let detail of details">
+        {{ detail?.description }}
+      </li>
+    </ul>
+
+    <ng-template #viewMessage>
+      <span class="modal-error-handling-content">
+        {{ message }}
+      </span>
+    </ng-template>
+
+    <footer>
+      <button
+        class="main-action"
+        (click)="closeModal()"
+      >
+        {{ buttonText }}
+      </button>
+    </footer>
+  </section>
+</div>
