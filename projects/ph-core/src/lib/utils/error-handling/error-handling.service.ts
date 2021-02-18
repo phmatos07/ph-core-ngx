@@ -21,7 +21,7 @@ export class ErrorHandlingService implements ErrorHandler {
 
   /**
    * @description Método nativo do Angular que intercepta todos erros e permite a manipulação das exceções
-   * @param error
+   * @param error: any
    */
   handleError(error: any): void {
 

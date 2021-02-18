@@ -14,9 +14,9 @@ export class LoggingService {
   private readonly STYLE_TEXT = `font-weight: bold; color: #02832a;`;
 
   /**
-    * @description Método responsável por mostrar os erros de API no console do navegador
-    * @param httpError Objeto de erro para API
-  */
+   * @description Método responsável por mostrar os erros de API no console do navegador
+   * @param httpError Objeto de erro para API
+   */
   logHttpError(httpError: ServerErrorResponse): void {
 
     console.group(`%c${this.TITLE}`, this.STYLE_TITLE, `ERRO DE ${httpError.platformError}`);
@@ -33,7 +33,7 @@ export class LoggingService {
   /**
    * @description Método responsável por mostrar os erros do FRONT no console do navegador
    * @param clientError Objeto de erro para FRONT
-  */
+   */
   logClientSide(clientError: ClientError): void {
 
     console.group(`%c${this.TITLE}`, this.STYLE_TITLE, `ERRO DE ${clientError.platformError}`);
@@ -47,9 +47,9 @@ export class LoggingService {
   }
 
   /**
-    * @description Método responsável por mostrar os erros gerais que o 'ErrorHandler' não consiga tratar
-    * @param error Objeto de erros genéricos
-  */
+   * @description Método responsável por mostrar os erros gerais que o 'ErrorHandler' não consiga tratar
+   * @param error Objeto de erros genéricos
+   */
   logGenericErrors(error: unknown): void {
     console.group(`%c${this.TITLE}`, this.STYLE_TITLE, 'Tipo de erro não identificado');
     console.error(error);

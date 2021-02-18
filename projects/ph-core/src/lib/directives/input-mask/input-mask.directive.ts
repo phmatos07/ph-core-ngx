@@ -13,7 +13,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
  * @since 1.0.0
  */
 @Directive({
-  selector: '[pcnInputMask]',
+  selector: '[phcInputMask]',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: InputMaskDirective,
@@ -39,7 +39,7 @@ export class InputMaskDirective implements ControlValueAccessor {
   }
 
   @HostListener('keyup', ['$event'])
-  onKeyup($event: any) {
+  onKeyup($event: any): void {
 
     let valor = $event.target.value.replace(/\D/g, '');
     const pad = this.pcuInputMask.replace(/\D/g, '').replace(/9/g, '_');
@@ -73,7 +73,7 @@ export class InputMaskDirective implements ControlValueAccessor {
   }
 
   @HostListener('blur', ['$event'])
-  onBlur($event: any) {
+  onBlur($event: any): void {
     if ($event.target.value.length === this.pcuInputMask.length) {
       return;
     }
