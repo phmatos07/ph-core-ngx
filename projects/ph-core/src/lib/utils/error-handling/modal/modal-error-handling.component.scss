@@ -1,0 +1,132 @@
+// TODO: Implementar uma nova estrutura de estilo referente ao MODAL
+$color-success: #28aa46;
+$color-warning: #ff6633;
+$color-attention: #a10435;
+$color-dark: #000000;
+$color-dark-grey: #666666;
+$color-white: #ffffff;
+$space-small: 10px;
+$space-medium: 20px;
+$space-large: 30px;
+$font-size-medium: 16px;
+$font-size-xxlarge: 28px;
+
+.modal-error-handling {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba($color-dark, 0.6);
+
+  section {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    padding: $space-large;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    border: 1px solid $color-dark-grey;
+    border-radius: 20px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    margin-top: $space-medium;
+
+    font: {
+      size: $font-size-xxlarge;
+      weight: bold;
+    }
+
+    text-align: center;
+    letter-spacing: 2.1px;
+  }
+
+  ul {
+    margin-top: $space-small;
+    color: $color-dark;
+    font-size: $font-size-medium;
+    text-align: justify;
+    list-style: disc;
+
+    li {
+      margin-top: $space-small;
+    }
+  }
+
+  footer {
+    margin-top: $space-large;
+  }
+
+  button {
+    font-size: $font-size-medium;
+  }
+
+  &-content {
+    margin-top: $space-large;
+    color: $color-dark;
+    font-size: $font-size-medium;
+    text-align: center;
+    letter-spacing: 1.33px;
+  }
+
+  &-title-success {
+    color: $color-success;
+  }
+
+  &-title-warning {
+    color: $color-warning;
+  }
+
+  &-title-attention {
+    color: $color-attention;
+  }
+}
+
+.modal-error-handling-icon {
+  &::before {
+    border: 6px solid;
+    border-radius: 50%;
+
+    .modal-error-handling-icon-success & {
+      content: '';
+      display: inline-block;
+      width: 0.625rem;
+      height: 0.625rem;
+      background-position: 50%;
+      background-size: 9rem;
+      border-color: $color-success;
+    }
+
+    .modal-error-handling-icon-warning & {
+      content: '';
+      display: inline-block;
+      width: 0.625rem;
+      height: 0.625rem;
+      background-position: 50%;
+      background-size: 9rem;
+      border-color: $color-warning;
+    }
+
+    .modal-error-handling-icon-attention & {
+      content: '';
+      display: inline-block;
+      width: 0.625rem;
+      height: 0.625rem;
+      background-position: 50%;
+      background-size: 9rem;
+      border-color: $color-attention;
+    }
+  }
+}
